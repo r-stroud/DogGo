@@ -6,8 +6,11 @@ DogGo is a ASP.NET MVC project for NSS.
 
 ## Technologies Used
 
-
-[<img src="https://user-images.githubusercontent.com/106875994/224575102-80fa8326-c6de-4297-8309-aab0c495c9c8.png" width="60" height="60">](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [<img src="https://user-images.githubusercontent.com/106875994/224575292-710f917a-623b-4b6f-80c8-21280b0538b0.png" width="60" height="60">](https://developer.mozilla.org/en-US/docs/Web/CSS)[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png" width="60" height="60">](https://getbootstrap.com/)[<img src="https://logodix.com/logo/1982164.png" width="60" height="60">](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16)[<img src="https://w7.pngwing.com/pngs/411/817/png-transparent-web-development-net-framework-asp-net-mvc-software-framework-microsoft-blue-angle-logo-thumbnail.png" width="80" height="60">](https://dotnet.microsoft.com/en-us/apps/aspnet/mvc)
+- SQL
+- ASP.NET MVC
+- BOOTSTRAP
+- C#
+- JavaScript
 
 
 ## How to Install and Run
