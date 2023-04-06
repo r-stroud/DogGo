@@ -4,8 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>Owners</h1>
+<h2>Model.Email</h2>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -25,11 +25,29 @@
                 @Html.DisplayNameFor(model => model.Address)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NieghborhoodId)
+                @Html.DisplayNameFor(model => model.NieghborhoodName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dogs) <br />
+                @Html.DisplayNameFor(model => model.Dogs[0].Id)
+                @Html.DisplayNameFor(model => model.Dogs[0].Name)
+                @Html.DisplayNameFor(model => model.Dogs[0].Breed)
+                @Html.DisplayNameFor(model => model.Dogs[0].Notes)
+                @Html.DisplayNameFor(model => model.Dogs[0].ImageUrl)
+            </th>
+            <th>
+                
+            </th>
+            <th>
+                
+            </th>
+            <th>
+                
+            </th>
+ 
             <th></th>
         </tr>
     </thead>
@@ -49,15 +67,34 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NieghborhoodId)
+                @Html.DisplayFor(modelItem => item.NieghborhoodName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Phone)
+                @Html.DisplayFor(modelItem => item.Phone)    
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+
+                <td>
+                    @foreach (var dog in @item.Dogs)
+                   {
+                    
+                     
+                            @Html.DisplayFor(dogItem => dog.Id) 
+                            @Html.DisplayFor(dogItem => dog.Name) 
+                            @Html.DisplayFor(dogItem => dog.Breed) 
+                            @Html.DisplayFor(dogItem => dog.Notes) 
+                            @Html.DisplayFor(dogItem => dog.ImageUrl)
+                            <br />
+                    
+                
+
+                   }
+                </td>
+               
+  
+             <td>
+             @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
+             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
             </td>
         </tr>
 }
