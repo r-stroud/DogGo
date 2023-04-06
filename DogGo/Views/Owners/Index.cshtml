@@ -5,7 +5,6 @@
 }
 
 <h1>Owners</h1>
-<h2>Model.Email</h2>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -31,7 +30,7 @@
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Dogs) <br />
+                @Html.DisplayNameFor(model => model.Dogs).ToUpper() <br />
                 @Html.DisplayNameFor(model => model.Dogs[0].Id)
                 @Html.DisplayNameFor(model => model.Dogs[0].Name)
                 @Html.DisplayNameFor(model => model.Dogs[0].Breed)
@@ -76,17 +75,12 @@
                 <td>
                     @foreach (var dog in @item.Dogs)
                    {
-                    
-                     
-                            @Html.DisplayFor(dogItem => dog.Id) 
-                            @Html.DisplayFor(dogItem => dog.Name) 
-                            @Html.DisplayFor(dogItem => dog.Breed) 
-                            @Html.DisplayFor(dogItem => dog.Notes) 
-                            @Html.DisplayFor(dogItem => dog.ImageUrl)
-                            <br />
-                    
-                
-
+                        <span>@Html.DisplayFor(dogItem => dog.Id) </span>
+                        <span> @Html.DisplayFor(dogItem => dog.Name) </span>
+                        <span>@Html.DisplayFor(dogItem => dog.Breed) </span>
+                        <span>@Html.DisplayFor(dogItem => dog.Notes) </span>
+                        <span>@Html.DisplayFor(dogItem => dog.ImageUrl)</span>
+                        <br />
                    }
                 </td>
                
