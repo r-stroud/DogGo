@@ -2,14 +2,14 @@
 
 ![DogGo](https://user-images.githubusercontent.com/106875994/230247150-969d2e61-f44d-4556-b8f5-8b6044bc84bf.png)
 
-DogGo is a ASP.NET MVC project for NSS.
-
 ## Project Description
 
-This project is to practice and better understand base classes, utility classes, repositories,  and SQL commands.
+This project is to practice and better understand how to build web applications using ASP.NET MVC.
 
 ## Technologies Used
 
+- Bootstrap
+- JavaScript
 - SQL
 - C#
 
