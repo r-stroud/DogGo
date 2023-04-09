@@ -60,7 +60,11 @@ ON N.Id = O.NeighborhoodId
                                 Email = reader.GetString(reader.GetOrdinal("Email")),
                                 Name = reader.GetString(reader.GetOrdinal("Name")),
                                 Address = reader.GetString(reader.GetOrdinal("Address")),
-                                NieghborhoodName = reader.GetString(reader.GetOrdinal("NeighborhoodName")),
+                                //NieghborhoodName = reader.GetString(reader.GetOrdinal("NeighborhoodName")),
+                                neighborhood = new Neighborhood() 
+                                { 
+                                    Name = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                                },
                                 Phone = reader.GetString(reader.GetOrdinal("Phone")),
                                 Dogs = new List<Dog>()
                             };
@@ -128,7 +132,7 @@ ON N.Id = O.NeighborhoodId
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-SELECT O.Id, O.Email, O.[Name], O.[Address], O.Phone,
+SELECT O.Id, O.Email, O.[Name], O.[Address], O.Phone, O.NeighborhoodId,
 D.Id AS DogId, D.[Name] AS DogName, D.Breed, D.Notes, D.ImageUrl,
 N.[Name] AS NeighborhoodName
 FROM Owner O
@@ -149,7 +153,11 @@ WHERE O.Id = @id
                             Email = reader.GetString(reader.GetOrdinal("Email")),
                             Name = reader.GetString(reader.GetOrdinal("Name")),
                             Address = reader.GetString(reader.GetOrdinal("Address")),
-                            NieghborhoodName = reader.GetString(reader.GetOrdinal("NeighborhoodName")),
+                            NeighborhoodId = reader.GetInt32(reader.GetOrdinal("NeighborhoodId")),
+                            neighborhood = new Neighborhood
+                            {
+                                Name = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            },
                             Phone = reader.GetString(reader.GetOrdinal("Phone"))
 
                         };
@@ -197,7 +205,11 @@ WHERE O.Email = @email";
                             Email = reader.GetString(reader.GetOrdinal("Email")),
                             Address = reader.GetString(reader.GetOrdinal("Address")),
                             Phone = reader.GetString(reader.GetOrdinal("Phone")),
-                            NieghborhoodName = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            //NieghborhoodName = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            neighborhood = new Neighborhood
+                            {
+                                Name = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            }
                         };
 
                         reader.Close();
