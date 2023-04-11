@@ -47,7 +47,11 @@ ON N.Id = W.NeighborhoodId
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
                             Name = reader.GetString(reader.GetOrdinal("Name")),
                             ImageUrl = reader.GetString(reader.GetOrdinal("ImageUrl")),
-                            NeighborhoodName = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            Neighborhood = new Neighborhood()
+                            {
+                                Name = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            }
+                            
                         };
 
                         walkers.Add(walker);
@@ -86,7 +90,11 @@ WHERE W.Id = @id
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
                             Name = reader.GetString(reader.GetOrdinal("Name")),
                             ImageUrl = reader.GetString(reader.GetOrdinal("ImageUrl")),
-                            NeighborhoodName = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            Neighborhood = new Neighborhood()
+                            {
+                                Name = reader.GetString(reader.GetOrdinal("NeighborhoodName"))
+                            }
+                            
                         };
 
                         reader.Close();

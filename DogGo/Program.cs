@@ -14,6 +14,7 @@ namespace DogGo
             builder.Services.AddTransient<IOwnerRepository, OwnerRepository>();
             builder.Services.AddTransient<IDogRepository, DogRepository>();
             builder.Services.AddTransient<INeighborhoodRepository, NeighborhoodRepository>();
+            builder.Services.AddTransient<IWalksRepository, WalksRepository>();
 
             var app = builder.Build();
 
